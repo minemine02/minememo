@@ -5,7 +5,6 @@ import com.minede.minememo.minememo.service.MemoService;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-import java.util.Map;
 import java.util.List;
 
 @RestController

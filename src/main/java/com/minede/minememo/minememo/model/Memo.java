@@ -24,8 +24,11 @@ public class Memo {
 
     //日付
     private LocalDateTime createdAt = LocalDateTime.now();  //作成日付
+    @Column(name = "memo_year")     //DB用語衝突対策
     private int year;   //年
+    @Column(name = "memo_month")    //DB用語衝突対策
     private int month;  //月
+    @Column(name = "memo_day")      //DB用語衝突対策
     private int day;    //日
 
     //no-arg constructor

@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.time.LocalDateTime;
 
 // 保存、削除
 @Service
@@ -37,6 +38,15 @@ public class MemoService {
         if (memo.getTitle() == null || memo.getContent() == null) {
             throw new IllegalArgumentException("Title and content must not be null.");
         }
+
+        //日付値を作成
+        if (memo.getCreatedAt() == null) {
+            memo.setCreatedAt(LocalDateTime.now());
+        }
+        //年・月・日の受取
+        memo.setYear(memo.getCreatedAt().getYear());
+        memo.setMonth(memo.getCreatedAt().getMonthValue());
+        memo.setDay(memo.getCreatedAt().getDayOfMonth());
 
         // Memoの保存
         logger.info("MEMO ID: {} の保存を行います。", memo.getId());
