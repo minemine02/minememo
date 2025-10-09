@@ -32,8 +32,9 @@ public class Memo {
     public Memo() {}
 
     //引数ありconstructor
-    public Memo(String title, String content, LocalDateTime createdAt,
+    public Memo(Long id, String title, String content, LocalDateTime createdAt,
                 int year, int month, int day) {
+        this.id = id;
         this.title = title;
         this.content = content;
         this.createdAt = createdAt;
